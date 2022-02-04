@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #ddd;
+    font-family: 'poppins', sans-serif;
+    font-size: 18px;
+    margin: 50px;
+}
+
+.img{
+    width: 100%;
+}
+
+/* Container */
+.container{
+    display: grid;
+
+}
+
+/* Header */
+.header{
+    display: grid;
+    grid-template-areas: 
+    'hero hero features-1'
+    'hero hero features-2';
+}
+
+.hero {
+    grid-area: hero;
+    min-height: 450px;
+    background-image: url(img/6.png);
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+}
+.hero > *{
+    display: none;
+    color: white;
+}
+.features {
+    background-color: black;
+    display: grid;
+    place-content: center;
+    background-position: center;
+}
+.features-1{
+    grid-area: features-1;
+    background-image: url(img/img7.jpg);
+    background-size: cover;
+}
+.features-2{
+    grid-area: features-2;
+    background-image: url(img/img8.jpg);
+    background-size: cover;
+}
+.after, .year {
+    font-size: 2em;
+    /* font-weight: 400; */
+    text-align: center;
+}
+/* Navigation */
+.menu{
+    order: -1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.menu .brand{
+    color:#333;
+    font-size: 1.3em;
+}
+.menu ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    list-style: none;
+    gap: 5px;
+}
+
+.menu a{
+    display: block;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 0;
+   text-transform: uppercase;
+   font-size: 0.9em;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none ;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 99;
+}
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -7px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+    background-color: black;
+}
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: black;
+    transition: all 0.5s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 0;
+}
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px, -1px);
+    background-color: white;
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg)  translate(-1px, 0);
+    background-color: white;
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0);
+}
+
+/* services */
+.services{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 5px;
+    
+}
+.service{
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    border: 2px solid #aaa;
+    margin-top: 5px;
+    border-radius: 30px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+.service .icon{
+    font-size: 3em;
+}
+.service h3{
+    font-size: 1.5em;
+}
+.service p{
+    font-weight: 0;
+    letter-spacing: 1px;
+    font-size: 0.8em;
+}
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top: 100px;
+    gap: 5px;
+    justify-items: center;
+    align-items: center;
+}
+.gallery h2{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+
+/* Responsive Breakpoint */
+
+@media (max-width: 1024px){
+.menu{
+    order: inherit;
+    grid-template-columns: 1fr;
+}
+.menu .brand{
+    display: none;
+}
+    .hero > * {
+        display: block;
+        color: white;
+        background-color: black;
+        padding: 5px;
+        margin-bottom: 10px;
+        font-size: 1.5em;
+    }
+    .hero{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+
+    }
+}
+@media (max-width: 768px){
+    .menu{
+        order: -1;
+        justify-items: end;
+    }
+    .menu-toggle{
+        display: flex;
+    }
+    .menu ul {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        right: 0;
+        background-color: black;
+        top: 0;
+        height: 100vh;
+        width: 80%;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: 1;
+        transform: translateY(-100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+    .menu ul.slide{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px){
+body{
+        margin: 15px;
+    }
+.header{
+    grid-template-areas: 
+    'hero'
+    'features-1'
+    'features-2';
+}
+.gallery img{
+    width: 300px;
+}
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petualangan Sikay</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <div class="hero">
+                <h2>Sebuah Arsip Perjalanan</h2>
+                <P>Berpetualang Alam bebas</P>
+            </div>
+            <div class="features features-1">
+                <h4 class="after">Gunung Sumbing</h4>
+                <p class="year">2020</p>
+            </div>
+            <div class="features features-2">
+                <h4 class="after">Gunung Lawu</h4>
+                <p class="year">2019</p>
+            </div>
+        </header>
+
+        <nav class="menu">
+
+            <div class="menu-toggle">
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="brand">
+                <h1>Sikay Adventure</h1>
+            </div>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Product</a></li>
+                <li><a href="">Gallery</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+        </nav>
+
+    </div>
+    <section class="services">
+        <div class="service">
+            <div class="icon">💻</div>
+            <h3>Tutorial</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque consectetur nihil distinctio non dolorum
+                quasi?</p>
+        </div>
+        <div class="service">
+            <div class="icon">🎓</div>
+            <h3>Online Course</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque consectetur nihil distinctio non dolorum
+                quasi?</p>
+        </div>
+        <div class="service">
+            <div class="icon">🎧</div>
+            <h3>Podcast</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque consectetur nihil distinctio non dolorum
+                quasi?</p>
+        </div>
+        <div class="service">
+            <div class="icon">👕👖</div>
+            <h3>Merch</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque consectetur nihil distinctio non dolorum
+                quasi?</p>
+        </div>
+    </section>
+    <section class="gallery">
+        <h2>Gallery</h2>
+        <img src="https://source.unsplash.com/random/201x201" alt=""><img
+            src="https://source.unsplash.com/random/201x202" alt=""><img
+            src="https://source.unsplash.com/random/201x203" alt=""><img
+            src="https://source.unsplash.com/random/201x204" alt=""><img
+            src="https://source.unsplash.com/random/201x205" alt=""><img
+            src="https://source.unsplash.com/random/202x201" alt=""><img
+            src="https://source.unsplash.com/random/203x201" alt=""><img
+            src="https://source.unsplash.com/random/204x201" alt=""><img
+            src="https://source.unsplash.com/random/205x201" alt=""><img
+            src="https://source.unsplash.com/random/202x202" alt="">
+    </section>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle input');
+        const nav = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', function () {
+            nav.classList.toggle('slide');
+        });
+    </script>
+
+</body>
+
+</html>
